@@ -41,6 +41,17 @@ a {
   margin-bottom: 3rem;
 }
 
+.mt-3 {
+  margin-top: 3rem;
+}
+
+section {
+  /* padding-bottom: 6rem;
+  padding-left: 10%;
+  padding-right: 10%; */
+  padding: 6rem 10%;
+}
+
 header {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 99%), url("../img/header-bg.jpg");
   background-position: center;
@@ -127,7 +138,7 @@ nav {
 }
 
 main {
-  padding: 5% 10%;
+  padding: 5% 0;
 }
 
 .grid {
@@ -138,6 +149,32 @@ main {
   row-gap: 10px;
 }
 
+.grid-column-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-column-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  justify-content: flex-start;
+  /* row-gap: 5px; */
+  padding: 15px 25px;
+  word-break: break-word;
+}
+
+.box p {
+  font-size: 0.9rem;
+}
+
+.h-300 {
+  height: 300px;
+}
+
 .card {
   display: flex;
   flex-flow: column;
@@ -146,10 +183,9 @@ main {
   row-gap: 5px;
   background-color: #fff;
   border-radius: 0.6rem;
-  height: 400px;
+  /* height: 400px; */
   /* cursor: pointer; */
-  padding: 15px 25px;
-  margin: 10px 15px;
+  padding: 30px 25px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -165,20 +201,34 @@ main {
   font-size: 0.9rem;
 }
 
-.card1 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/card1.jpg);
+.section-title {
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffb703;
 }
 
-.card2 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/card1.jpg);
+.heder-phone {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-top: 2rem;
 }
 
-.card3 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/card1.jpg);
+.heder-phone span {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-.card4 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/card1.jpg);
+.bg-special {
+  background-color: #ffb703;
+}
+
+.txt-white {
+  color: #fff;
 }
 
 /* Tablet menu */
@@ -230,7 +280,7 @@ main {
   }
 
   .header__text {
-    width: 35%;
+    /* width: 35%; */
     justify-self: flex-start;
     margin-left: 10%;
   }
@@ -245,13 +295,5 @@ main {
   .header__text .txt-big {
     font-weight: 600;
     font-size: 2rem;
-  }
-
-  #section-services h2 {
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgb(112, 112, 112);
   }
 }
