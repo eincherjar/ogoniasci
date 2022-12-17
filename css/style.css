@@ -10,6 +10,7 @@ html {
   padding: 0;
   margin: 0;
   outline: none;
+  list-style: none;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -35,14 +36,6 @@ a {
 .item:not(.button) a:hover,
 .item a:hover::after {
   color: #ffb703;
-}
-
-.mb-3 {
-  margin-bottom: 3rem;
-}
-
-.mt-3 {
-  margin-top: 3rem;
 }
 
 section {
@@ -76,7 +69,8 @@ nav {
   align-items: center;
 }
 .menu li a {
-  display: block;
+  align-items: center;
+  display: flex;
   padding: 15px 5px;
 }
 .menu li.subitem a {
@@ -157,6 +151,10 @@ main {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid-column-1 {
+  grid-template-columns: 1fr;
+}
+
 .box {
   display: flex;
   flex-flow: column;
@@ -231,6 +229,71 @@ main {
   color: #fff;
 }
 
+.txt-big {
+  font-weight: 600;
+  font-size: 2rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+#section-contact h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#section-contact p,
+#section-contact a,
+#section-contact address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+#section-contact p:hover,
+#section-contact a:hover {
+  color: #ffb703;
+  cursor: pointer;
+}
+
+.mv-daynames-table {
+  color: #ffb703 !important;
+}
+
+#section-contact ion-icon {
+  font-size: 1.2rem;
+  color: #ffb703;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 400px;
+  width: 100%px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 400px;
+  width: 100%;
+}
+
 /* Tablet menu */
 @media all and (min-width: 700px) {
   .menu {
@@ -252,7 +315,7 @@ main {
     background-color: transparent;
   }
   .menu {
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: nowrap;
     background: none;
   }
@@ -290,10 +353,5 @@ main {
     text-transform: uppercase;
     line-height: 5rem;
     font-size: 5rem;
-  }
-
-  .header__text .txt-big {
-    font-weight: 600;
-    font-size: 2rem;
   }
 }
