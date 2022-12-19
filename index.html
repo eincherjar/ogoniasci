@@ -182,23 +182,41 @@
           <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FWarsaw&showTitle=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&showTabs=0&showDate=1&src=c2VubGRubXYyOHFjcTNnYTljazc4OXE5ZmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4ucG9saXNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
           <div class="box">
-            <form action="" method="post">
-              <div id="alert_message"></div>
-              <div class="form-group">
-                <label for="pwd">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required />
+            <form class="contact_form" method="post" action="contact.php">
+              <!-- form fields -->
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input name="name" type="text" class="form-control" placeholder="Name" required />
+                </div>
+                <div class="col-md-6 form-group">
+                  <input name="email" type="email" class="form-control" placeholder="Email" required />
+                </div>
+                <div class="col-md-6 form-group">
+                  <input name="phone" type="text" class="form-control" placeholder="Phone" required />
+                </div>
+                <div class="col-md-6 form-group">
+                  <input name="subject" type="text" class="form-control" placeholder="Subject" required />
+                </div>
+                <div class="col-12 form-group">
+                  <textarea name="message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                </div>
+
+                <!-- form message prompt -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="contact_msg" style="display: none">
+                      <p>Your message was sent.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <input type="submit" value="Submit Form" class="btn btn-success" name="post" />
+                </div>
+
+                <!-- hidden reCaptcha token input -->
+                <input type="hidden" id="token" name="token" />
               </div>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Comment:</label>
-                <textarea name="comment" class="form-control" id="comment" placeholder="Enter your comment" required></textarea>
-              </div>
-              <input type="hidden" name="recaptcha_response" value="" id="recaptchaResponse" />
-              <input type="submit" name="submit" value="Submit" class="btn btn-success btn-lg" style="padding: 6px 46px; margin: 16px 0 0 0" />
-              <div style="font-size: 12px; padding-top: 12px; color: #808080">Note: This form is protected by Google reCAPTCHA.</div>
             </form>
           </div>
         </div>
@@ -212,34 +230,18 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-      $("form").submit(function (event) {
-        event.preventDefault(); //Prevent the default form submission
-        grecaptcha.ready(function () {
-          grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "submit" }).then(function (token) {
-            var recaptchaResponse = document.getElementById("recaptchaResponse");
-            recaptchaResponse.value = token;
-            // Making the simple AJAX call to capture the data and submit
-            $.ajax({
-              url: "contact.php",
-              type: "post",
-              data: $("form").serialize(),
-              dataType: "json",
-              success: function (response) {
-                var error = response.error;
-                var success = response.success;
-                if (error != "") {
-                  $("#alert_message").html(error);
-                } else {
-                  $("#alert_message").html(success);
-                }
-              },
-              error: function (jqXhr, json, errorThrown) {
-                var error = jqXhr.responseText;
-                $("#alert_message").html(error);
-              },
-            });
-          });
+      grecaptcha.ready(function () {
+        grecaptcha.execute("your-site-key-here", { action: "homepage" }).then(function (token) {
+          // console.log(token);
+          document.getElementById("token").value = token;
         });
+        // refresh token every minute to prevent expiration
+        setInterval(function () {
+          grecaptcha.execute("your-site-key-here", { action: "homepage" }).then(function (token) {
+            console.log("refreshed token:", token);
+            document.getElementById("token").value = token;
+          });
+        }, 60000);
       });
     </script>
   </body>
