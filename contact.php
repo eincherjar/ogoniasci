@@ -6,7 +6,7 @@ require('recaptcha/src/autoload.php');
 $from = $_POST['email'];
 // $from = 'marcin@globetyre.pl';
 // an email address that will receive the email with the output of the form
-$sendTo = 'info@tprobuild.com';
+$sendTo = 'marcin@globetyre.pl';
 // subject of the email
 $subject = 'New message from tprobuild.com';
 // form field names and their translations.
@@ -17,7 +17,7 @@ $okMessage = '<div style="text-align:center;margin-top:25%;"><h1>Contact form su
 // If something goes wrong, we will display this message.
 $errorMessage = '<div style="text-align:center;margin-top:25%;"><h1>There was an error while submitting the form. Please try again later</h1><a href="/">Back to page</a></div>';
 // ReCaptch Secret
-$recaptchaSecret = '6Lf4aI8jAAAAAKwm6FRCvdqWb8cNaPtIz2duppQE';
+$recaptchaSecret = '6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM';
 // let's do the sending
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
