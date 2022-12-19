@@ -14,14 +14,13 @@
       <nav>
         <ul class="menu">
           <li class="logo"><a href="#">Ogoniasci.pl</a></li>
-          <!-- <li class="item"><a href="#">Strona Główna</a></li> -->
           <li class="item"><a href="#section-about">O mnie</a></li>
           <li class="item"><a href="#section-services">Usługi</a></li>
           <li class="item"><a href="#section-contact">Kontakt</a></li>
-          <li class="item"><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-          <li class="toggle">
-            <ion-icon name="menu-outline"></ion-icon></a>
+          <li class="item">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
           </li>
+          <li class="toggle"><ion-icon name="menu-outline"></ion-icon></li>
         </ul>
       </nav>
 
@@ -32,11 +31,11 @@
           <h2>606 491 650</h2>
           <span>Czynne całą dobę</span>
         </div>
-        <div>
+      </div>
     </header>
 
     <main>
-      <section id="section-about" >
+      <section id="section-about">
         <h2 class="section-title">O mnie</h2>
         <div class="grid grid-column-4">
           <div class="card">
@@ -138,13 +137,13 @@
           </div>
           <div class="box">
             <h3>Badania Laboratoryjne</h3>
-            <p>-morfologia i biochemia krwi- możliwość wykonania badania na miejscu</P>
-            <p>-badanie moczu</P>
-            <p>-testy w kierunku chorób zakaźnych (parwowiroza,nosówka, panleukopenia,białaczka kotów,giardioza,test w kierunku Borelia z kleszcza)</P>
-            <p>-badania w kierunku innych chorób zakaźnych: toksoplazma, neospora</P>
-            <p>-badanie poziomu progesteronu u suk w cieczce i w ciąży</P>
-            <p>-badanie poziomu hormonów tarczycy</P>
-            <p>-inne badania w zależności od potrzeb</P>
+            <p>-morfologia i biochemia krwi- możliwość wykonania badania na miejscu</p>
+            <p>-badanie moczu</p>
+            <p>-testy w kierunku chorób zakaźnych (parwowiroza,nosówka, panleukopenia,białaczka kotów,giardioza,test w kierunku Borelia z kleszcza)</p>
+            <p>-badania w kierunku innych chorób zakaźnych: toksoplazma, neospora</p>
+            <p>-badanie poziomu progesteronu u suk w cieczce i w ciąży</p>
+            <p>-badanie poziomu hormonów tarczycy</p>
+            <p>-inne badania w zależności od potrzeb</p>
           </div>
           <div class="box">
             <h3>Badanie Mikroskopowe</h3>
@@ -159,11 +158,9 @@
       <section id="section-contact">
         <h2 class="section-title">Kontakt</h2>
 
-        <div class="grid grid-column-2">
+        <div class="grid grid-column-1-2">
           <div class="box">
-            <h3>
-              Ogoniaści.pl
-            </h3>
+            <h3>Ogoniaści.pl</h3>
             <address>
               <ion-icon name="compass"></ion-icon>
               <ul>
@@ -174,31 +171,81 @@
             <p><ion-icon name="call"></ion-icon> <b>606 491 650</b></p>
             <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> Ogoniasci</a>
           </div>
-          <div class="box">
-            Formularz
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Ogoniasci.pl&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
           </div>
         </div>
 
-        <div class="grid grid-column-1 mt-3">
+        <div class="grid grid-column-2 mt-3">
           <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FWarsaw&showTitle=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&showTabs=0&showDate=1&src=c2VubGRubXYyOHFjcTNnYTljazc4OXE5ZmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4ucG9saXNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
 
-        <div class="grid grid-column-1 mt-3">
-          <div class="mapouter">
-            <div class="gmap_canvas"><iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Ogoniasci.pl&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            </div>
+          <div class="box">
+            <form id="contact-form" method="post" action="contact.php" role="form">
+              <div class="messages"></div>
+
+              <div class="controls">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="form_name">Firstname *</label>
+                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required." />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="form_lastname">Lastname *</label>
+                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required." />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="form_email">Email *</label>
+                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required." />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="form_phone">Phone</label>
+                      <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="form_message">Message *</label>
+                  <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                  <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha" />
+                  <div class="help-block with-errors"></div>
+                </div>
+
+                <input type="submit" class="btn btn-success btn-send" value="Send message" />
+
+                <p class="text-muted"><strong>*</strong> These fields are required. Contact form template by <a href="https://bootstrapious.com/p/bootstrap-recaptcha" target="_blank">Bootstrapious</a>.</p>
+              </div>
+            </form>
           </div>
         </div>
       </section>
-
-
     </main>
 
     <footer>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ut cumque minus quae illo nam quis voluptatibus odio maiores consequuntur ducimus natus laborum veritatis numquam officia consectetur dolores, repellat pariatur.</footer>
 
     <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="./js/contact.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
