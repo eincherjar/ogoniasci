@@ -170,54 +170,50 @@
                 <li>39-200 Debica</li>
               </ul>
             </address>
-            <p><ion-icon name="call"></ion-icon> <b>606 491 650</b></p>
-            <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> Ogoniasci</a>
-          </div>
-          <div class="mapouter">
-            <div class="gmap_canvas"><iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Ogoniasci.pl&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
-          </div>
-        </div>
+            <div class="grid grid-column-2">
+              <p><ion-icon name="call"></ion-icon> <b>606 491 650</b></p>
+              <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> Ogoniasci</a>
+            </div>
 
-        <div class="grid grid-column-2 mt-3">
-          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FWarsaw&showTitle=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&showTabs=0&showDate=1&src=c2VubGRubXYyOHFjcTNnYTljazc4OXE5ZmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4ucG9saXNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+            <form class="contact-form mt-1" method="post" action="contact.php" id="form">
+              <div class="grid grid-column-2 mb-1">
+                <input name="name" type="text" placeholder="imię" required />
+                <input name="surname" type="text" placeholder="nazwisko" required />
+              </div>
 
-          <div class="box">
-            <form class="contact_form" method="post" action="contact.php">
-              <!-- form fields -->
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input name="name" type="text" class="form-control" placeholder="Name" required />
-                </div>
-                <div class="col-md-6 form-group">
-                  <input name="email" type="email" class="form-control" placeholder="Email" required />
-                </div>
-                <div class="col-md-6 form-group">
-                  <input name="phone" type="text" class="form-control" placeholder="Phone" required />
-                </div>
-                <div class="col-md-6 form-group">
-                  <input name="subject" type="text" class="form-control" placeholder="Subject" required />
-                </div>
-                <div class="col-12 form-group">
-                  <textarea name="message" class="form-control" rows="5" placeholder="Message" required></textarea>
-                </div>
+              <div class="grid grid-column-2 mb-1">
+                <input name="email" type="email" placeholder="email" required />
+                <input name="phone" type="text" placeholder="telefon" required />
+              </div>
 
-                <!-- form message prompt -->
-                <div class="row">
-                  <div class="col-12">
-                    <div class="contact_msg" style="display: none">
-                      <p>Your message was sent.</p>
-                    </div>
+              <div class="grid grid-column-2 mb-1">
+                <input name="breed" type="text" placeholder="rasa psa" required />
+                <input name="age" type="text" placeholder="wiek psa" required />
+              </div>
+
+              <div class="grid grid-column-1 mb-1">
+                <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
+              </div>
+
+              <div class="grid grid-column-1 mb-1">
+                <button type="submit" form="form" value="Submit" class="btn d-flex"><ion-icon name="send"></ion-icon> Wyślij</button>
+              </div>
+
+              <!-- form message prompt -->
+              <div class="grid">
+                <div class="grid-column-1">
+                  <div class="contact_msg" style="display: none">
+                    <p>Your message was sent.</p>
                   </div>
                 </div>
-
-                <div class="col-12">
-                  <input type="submit" value="Submit Form" class="btn btn-success" name="post" />
-                </div>
-
-                <!-- hidden reCaptcha token input -->
-                <input type="hidden" id="token" name="token" />
               </div>
+
+              <!-- hidden reCaptcha token input -->
+              <input type="hidden" id="token" name="token" />
             </form>
+          </div>
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Ogoniasci.pl&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
           </div>
         </div>
       </section>
@@ -231,18 +227,19 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
       grecaptcha.ready(function () {
-        grecaptcha.execute("your-site-key-here", { action: "homepage" }).then(function (token) {
+        grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "homepage" }).then(function (token) {
           // console.log(token);
           document.getElementById("token").value = token;
         });
         // refresh token every minute to prevent expiration
         setInterval(function () {
-          grecaptcha.execute("your-site-key-here", { action: "homepage" }).then(function (token) {
+          grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "homepage" }).then(function (token) {
             console.log("refreshed token:", token);
             document.getElementById("token").value = token;
           });
         }, 60000);
       });
     </script>
+    <script src="./js/contact.js"></script>
   </body>
 </html>
