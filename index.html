@@ -8,7 +8,7 @@
     <!-- style -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- js -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM"></script> -->
   </head>
 
   <body>
@@ -176,7 +176,7 @@
               <p><ion-icon name="call"></ion-icon> <b>606 491 650</b></p>
               <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> <b>Ogoniasci</b></a>
             </div>
-
+            <!--
             <form class="contact-form mt-1" method="post" action="contact.php" id="form">
               <div class="grid grid-column-2 mb-1">
                 <input name="name" type="text" placeholder="Imię" required />
@@ -199,20 +199,20 @@
 
               <div class="grid grid-column-1 mb-1">
                 <button type="submit" form="form" value="Submit" class="btn d-flex"><ion-icon name="send"></ion-icon> Wyślij</button>
-              </div>
+              </div> -->
 
-              <!-- form message prompt -->
-              <div class="grid">
+            <!-- form message prompt -->
+            <!-- <div class="grid">
                 <div class="grid-column-1">
                   <div class="contact_msg" style="display: none">
                     <p>Your message was sent.</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-              <!-- hidden reCaptcha token input -->
-              <input type="hidden" id="token" name="token" />
-            </form>
+            <!-- hidden reCaptcha token input -->
+            <!-- <input type="hidden" id="token" name="token" />
+            </form> -->
           </div>
           <div class="mapouter">
             <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Ogoniasci.pl&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
@@ -248,7 +248,7 @@
         $("html, body").animate({ scrollTop: 0 }, "300");
       });
     </script>
-    <script>
+    <!-- <script>
       grecaptcha.ready(function () {
         grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "homepage" }).then(function (token) {
           // console.log(token);
@@ -262,7 +262,7 @@
           });
         }, 60000);
       });
-    </script>
-    <script src="./js/contact.js"></script>
+    </script> -->
+    <!-- <script src="./js/contact.js"></script> -->
   </body>
 </html>
