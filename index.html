@@ -8,7 +8,6 @@
     <!-- style -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- js -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM"></script> -->
   </head>
 
   <body>
@@ -22,7 +21,7 @@
           <li class="item"><a href="#section-services">Usługi</a></li>
           <li class="item"><a href="#section-contact">Kontakt</a></li>
           <li class="item">
-            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon><span> Ogoniasci.pl</span></a>
           </li>
           <li class="toggle"><ion-icon name="menu-outline"></ion-icon></li>
         </ul>
@@ -41,7 +40,7 @@
     <main>
       <section id="section-about">
         <h2 class="section-title">O mnie</h2>
-        <div class="grid grid-column-4">
+        <div class="grid">
           <div class="card">
             <h3>Kim jestem?</h3>
             <p>Gabinet <b>Ogoniaści</b> jest stworzony przez doświadczoną i wykwalifikowaną lekarz weterynarii.</p>
@@ -59,7 +58,7 @@
             <p>Zdrowie i miłość właściciela to wszystko, czego potrzeba zwierzęciu do pełni szczęścia.</p>
           </div>
         </div>
-        <div class="grid grid-column-2 mt-3">
+        <div class="grid grid-row mt-3">
           <div class="box"><iframe src="https://www.youtube.com/embed/2ZR8Oc9hEnM" frameborder="0" allowfullscreen class="h-300"></iframe></div>
           <div class="box justify-content-center"><b>Gabinet weterynaryjny „"Ogoniaści”</b> powstał w 2021 roku dzięki współpracy ludzi, którzy z pasją, sercem oraz pełnym profesjonalizmem podchodzą do swojego zawodu. Mam nadzieję, że udało mi się stworzyć miejsce o przyjaznej i ciepłej atmosferze w którym odnajdą Państwo wszystko co niezbędne dla zapewnienia Państwa podopiecznym długiego i szczęśliwego życia w pełnym zdrowiu.</div>
 
@@ -162,7 +161,7 @@
       <section id="section-contact">
         <h2 class="section-title">Kontakt</h2>
 
-        <div class="grid grid-column-1-2">
+        <div class="grid grid-row">
           <div class="box">
             <h3>Ogoniasci.pl</h3>
             <address>
@@ -172,7 +171,7 @@
                 <li>39-200 Debica</li>
               </ul>
             </address>
-            <div class="grid grid-column-2">
+            <div class="grid grid-row">
               <p><ion-icon name="call"></ion-icon> <b>606 491 650</b></p>
               <a href="https://www.facebook.com/Ogoniasci/" target="_blank"><ion-icon name="logo-facebook"></ion-icon> <b>Ogoniasci</b></a>
             </div>
@@ -232,6 +231,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./js/script.js"></script>
     <script>
       var btn = $("#buttonToTop");
 
@@ -248,21 +248,5 @@
         $("html, body").animate({ scrollTop: 0 }, "300");
       });
     </script>
-    <!-- <script>
-      grecaptcha.ready(function () {
-        grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "homepage" }).then(function (token) {
-          // console.log(token);
-          document.getElementById("token").value = token;
-        });
-        // refresh token every minute to prevent expiration
-        setInterval(function () {
-          grecaptcha.execute("6Lf4aI8jAAAAAOIUb5AMvJw0SG3T7vfLCtSHP6tM", { action: "homepage" }).then(function (token) {
-            console.log("refreshed token:", token);
-            document.getElementById("token").value = token;
-          });
-        }, 60000);
-      });
-    </script> -->
-    <!-- <script src="./js/contact.js"></script> -->
   </body>
 </html>
